@@ -2,16 +2,18 @@ package kr.pe.junho85.demo;
 
 import org.springframework.context.ApplicationEvent;
 
-public class MyEvent extends ApplicationEvent {
+public class MyEvent  {
     private int data;
 
-    public MyEvent(Object source) {
-        super(source);
-    }
+    private Object source;
 
     public MyEvent(Object source, int data) {
-        super(source);
+        this.source = source;
         this.data = data;
+    }
+
+    public Object getSource() {
+        return source;
     }
 
     public int getData() {
